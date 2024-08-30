@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter_google_books/domain/services/i_auth_service.dart';
+import 'package:flutter_google_books/application/services/i_auth_service.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -20,7 +20,7 @@ class SignInCubit extends Cubit<SignInState> {
     emit(const SignInState.loading());
 
     try {
-      await _authService.signIn(email, password);
+      await _authService.signInWithEmailAndPassword(email: email, password: password);
       emit(const SignInState.success());
     } catch (e) {
       emit(SignInState.failure(e.toString()));

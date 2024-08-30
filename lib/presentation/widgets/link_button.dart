@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class LinkButton extends StatelessWidget {
-  final String text;
   final VoidCallback onTap;
+  final String text;
 
   const LinkButton({
-    required this.text,
-    required this.onTap,
     super.key,
+    required this.onTap,
+    required this.text,
   });
 
   @override
