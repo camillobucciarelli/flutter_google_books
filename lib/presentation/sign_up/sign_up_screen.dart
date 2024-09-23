@@ -6,7 +6,6 @@ import 'package:flutter_google_books/application/auth/sign_up_cubit.dart';
 import 'package:flutter_google_books/injection.dart';
 import 'package:flutter_google_books/presentation/sign_up/widgets/sign_up_confirm_dialog.dart';
 import 'package:flutter_google_books/presentation/sign_up/widgets/sign_up_form.dart';
-import 'package:flutter_google_books/router.dart';
 
 @RoutePage()
 class SignUpScreen extends StatelessWidget {

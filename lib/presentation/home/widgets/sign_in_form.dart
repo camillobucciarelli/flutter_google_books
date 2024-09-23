@@ -56,7 +56,7 @@ class SignInForm extends StatelessWidget {
                     ElevatedButton(
                       onPressed: onSignIn,
                       style: ButtonStyle(
-                        minimumSize: MaterialStateProperty.all(const Size(250.0, 50.0)),
+                        minimumSize: WidgetStateProperty.all(const Size(250.0, 50.0)),
                       ),
                       child: const Text('Sign In'),
                     ),
@@ -81,7 +81,7 @@ class SignInForm extends StatelessWidget {
                     ),
                     const SizedBox(height: 15.0),
                     LinkButton(
-                      onTap: () => context.pushRoute(SignUpRoute()),
+                      onTap: () => context.replaceRoute(SignUpRoute()),
                       text: 'Sign up',
                     ),
                   ],
