@@ -6,7 +6,7 @@ part 'image_links_dto.freezed.dart';
 part 'image_links_dto.g.dart';
 
 @freezed
-class ImageLinksDto with _$ImageLinksDto {
+abstract class ImageLinksDto with _$ImageLinksDto {
   factory ImageLinksDto({
     @JsonKey(defaultValue: 'https://shorturl.at/zLU09') @Default('https://shorturl.at/zLU09') String thumbnail,
     @JsonKey(defaultValue: '') @Default('') String large,

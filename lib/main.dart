@@ -17,7 +17,7 @@ void main() async {
   await configureDependencies();
 
   final json = await rootBundle.loadString('assets/appainter_theme.json');
-  final theme = ThemeDecoder.decodeThemeData(jsonDecode(json))!;
+  final theme = ThemeDecoder.instance.decodeThemeData(jsonDecode(json))!;
 
   runApp(MyApp(theme: theme));
 }
