@@ -7,7 +7,7 @@ part 'volume_dto.freezed.dart';
 part 'volume_dto.g.dart';
 
 @freezed
-class VolumeDto with _$VolumeDto {
+abstract class VolumeDto with _$VolumeDto {
   factory VolumeDto({
     required String id,
     required String etag,

@@ -7,7 +7,7 @@ part 'volume_info_dto.freezed.dart';
 part 'volume_info_dto.g.dart';
 
 @freezed
-class VolumeInfoDto with _$VolumeInfoDto {
+abstract class VolumeInfoDto with _$VolumeInfoDto {
   factory VolumeInfoDto({
     @JsonKey(defaultValue: '') @Default('') String title,
     @JsonKey(defaultValue: '') @Default('') String subtitle,
