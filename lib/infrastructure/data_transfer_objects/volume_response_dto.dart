@@ -6,7 +6,7 @@ part 'volume_response_dto.freezed.dart';
 part 'volume_response_dto.g.dart';
 
 @freezed
-class VolumeResponseDto with _$VolumeResponseDto {
+abstract class VolumeResponseDto with _$VolumeResponseDto {
   factory VolumeResponseDto({
     required String kind,
     required int totalItems,

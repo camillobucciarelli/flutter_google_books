@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'volume.freezed.dart';
 
 @freezed
-class Volume with _$Volume {
+abstract class Volume with _$Volume {
   factory Volume({
     required String id,
     required String etag,

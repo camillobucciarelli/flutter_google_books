@@ -11,7 +11,7 @@ import 'package:flutter_google_books/presentation/volume_overview/volume_overvie
 part 'router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Screen,Route')
-class AppRouter extends _$AppRouter {
+class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(page: HomeRoute.page, initial: true),
