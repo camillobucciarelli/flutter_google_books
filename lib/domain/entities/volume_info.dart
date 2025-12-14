@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'volume_info.freezed.dart';
 
 @freezed
-class VolumeInfo with _$VolumeInfo {
+abstract class VolumeInfo with _$VolumeInfo {
   factory VolumeInfo({
     required String title,
     required String subtitle,
