@@ -1,8 +1,9 @@
-import 'package:flutter_google_books/domain/repositories/counter_repository.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../core/custom_error.dart';
+import '../../../../core/custom_error.dart';
+import '../repositories/counter_repository.dart';
+
 
 @lazySingleton
 class ReadCounterValueUseCase {

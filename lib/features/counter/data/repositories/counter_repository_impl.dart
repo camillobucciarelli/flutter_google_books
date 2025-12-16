@@ -1,8 +1,8 @@
-import 'package:flutter_google_books/domain/repositories/counter_repository.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../core/custom_error.dart';
+import '../../../../core/custom_error.dart';
+import '../../domain/repositories/counter_repository.dart';
 import '../data_sources/counter_data_source.dart';
 
 @LazySingleton(as: CounterRepository)

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_google_books/presentation/states/cubit/counter_cubit.dart';
 import 'package:get_it/get_it.dart';
+
+import 'states/cubit/counter_cubit.dart';
 
 class MyHomePageCubit extends StatelessWidget {
   final String title;
