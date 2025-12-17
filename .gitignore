@@ -49,3 +49,4 @@ app.*.map.json
 /.vscode/settings.json
 /.fvmrc
 /lib/di/di.config.dart
+lib/**/*.g.dart

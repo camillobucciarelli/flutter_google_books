@@ -1,20 +1,34 @@
 part of 'counter_cubit.dart';
 
-@immutable
-sealed class CounterState {}
+sealed class CounterState extends Equatable {
+  const CounterState();
 
-final class CounterInitial extends CounterState {}
+  @override
+  List<Object> get props => [];
+}
 
-final class CounterLoading extends CounterState {}
+final class CounterInitial extends CounterState {
+  const CounterInitial();
+}
+
+final class CounterLoading extends CounterState {
+  const CounterLoading();
+}
 
 final class CounterLoaded extends CounterState {
   final int value;
 
-  CounterLoaded(this.value);
+  const CounterLoaded(this.value);
+
+  @override
+  List<Object> get props => [value];
 }
 
 final class CounterError extends CounterState {
   final String message;
 
-  CounterError(this.message);
+  const CounterError(this.message);
+
+  @override
+  List<Object> get props => [message];
 }

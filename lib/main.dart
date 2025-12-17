@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_google_books/features/books/presentation/list/volumes_list_page.dart';
 
 import 'di/di.dart';
-import 'features/counter/presentation/my_home_page_cubit.dart';
 
 void main() {
   runZoned(() async {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePageCubit(title: 'Flutter Demo Home Page'),
+      home: const VolumesListPage(),
     );
   }
 }

@@ -17,6 +17,14 @@ dependencies:
   flutter_bloc: ^9.1.1
   get_it: ^9.2.0
   injectable: ^2.7.1+2
+  json_annotation: ^4.9.0
+  equatable: ^2.0.7
+  http: ^1.6.0
+  dio: ^5.9.0
+  intl: any
+  retrofit: ^4.9.1
+  cached_network_image: ^3.4.1
+  infinite_scroll_pagination: ^5.1.1
 
 dev_dependencies:
   flutter_test:
@@ -24,6 +32,11 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   build_runner: ^2.10.4
   injectable_generator: ^2.11.1
+  json_serializable: ^6.11.3
+  retrofit_generator: ^10.2.0
+
+dependency_overrides:
+  analyzer: ^8.2.0
 
 flutter:
   uses-material-design: true
