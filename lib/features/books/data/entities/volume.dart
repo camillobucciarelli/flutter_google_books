@@ -6,7 +6,7 @@ import 'volume_info.dart';
 part 'volume.g.dart';
 
 @JsonSerializable(createToJson: false)
-class Volume with EquatableMixin {
+class Volume extends Equatable {
   const Volume(this.id, this.volumeInfo);
 
   factory Volume.fromJson(Map<String, dynamic> json) => _$VolumeFromJson(json);

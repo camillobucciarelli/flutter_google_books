@@ -2,11 +2,13 @@ import 'package:dio/dio.dart' hide Headers;
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../entities/volumes_response.dart';
+import '../../entities/volume.dart';
+import '../../entities/volumes_response.dart';
 import 'volume_data_source.dart';
 
 part 'remote_volumes_data_source.g.dart';
 
+@Named('remote')
 @LazySingleton(as: VolumesDataSource)
 @RestApi(baseUrl: 'https://www.googleapis.com/books/v1')
 abstract class RemoteVolumesDataSource implements VolumesDataSource {
@@ -32,4 +34,8 @@ abstract class RemoteVolumesDataSource implements VolumesDataSource {
     @Query('maxResults') int maxResults,
     @Query('startIndex') int startIndex,
   );
+
+  @override
+  @GET('/volumes/{id}')
+  Future<Volume> getVolume(@Path() String id);
 }

@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_google_books/core/json_image_link_converter.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../../../core/json_date_converter.dart';
@@ -14,7 +13,10 @@ class VolumeInfo with EquatableMixin {
     this.publishedDate,
     this.description,
     this.authors,
-    this.imageLink,
+    this.imageLinks,
+    this.categories,
+    this.averageRating,
+    this.ratingsCount,
   );
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) =>
@@ -27,9 +29,13 @@ class VolumeInfo with EquatableMixin {
   final String? description;
   @JsonKey(defaultValue: <String>[])
   final List<String> authors;
-  @JsonKey(name: 'imageLinks')
-  @JsonImageLinkConverter()
-  final String? imageLink;
+  final ImageLinks imageLinks;
+  @JsonKey(defaultValue: <String>[])
+  final List<String> categories;
+  @JsonKey(defaultValue: 0)
+  final int averageRating;
+  @JsonKey(defaultValue: 0)
+  final int ratingsCount;
 
   @override
   List<Object?> get props => [
@@ -38,6 +44,23 @@ class VolumeInfo with EquatableMixin {
     publishedDate,
     description,
     authors,
-    imageLink,
+    imageLinks,
+    categories,
+    averageRating,
+    ratingsCount,
   ];
+}
+
+@JsonSerializable(createToJson: false)
+class ImageLinks extends Equatable {
+  const ImageLinks(this.thumbnail, this.large);
+
+  factory ImageLinks.fromJson(Map<String, dynamic> json) =>
+      _$ImageLinksFromJson(json);
+
+  final String? thumbnail;
+  final String? large;
+
+  @override
+  List<Object?> get props => [thumbnail, large];
 }
