@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-
+import '../../../theme/app_theme.dart';
 import 'states/cubit/counter_cubit.dart';
 
 class CounterCubitPage extends StatelessWidget {
@@ -61,9 +61,12 @@ class CounterCubitPage extends StatelessWidget {
                 return 0;
               },
               builder: (context, counter) {
-                return Text(
-                  '$counter',
-                  style: Theme.of(context).textTheme.headlineMedium,
+                return Padding(
+                  padding: Paddings.allS,
+                  child: Text(
+                    '$counter',
+                    style: Theme.of(context).textTheme.h1,
+                  ),
                 );
               },
             ),
@@ -80,10 +83,28 @@ class CounterCubitPage extends StatelessWidget {
                         icon: const Icon(Icons.exposure_minus_1),
                       ),
                     ),
-                    IconButton.filled(
-                      onPressed: builderContext.read<CounterCubit>().add,
-                      tooltip: 'Increment',
-                      icon: const Icon(Icons.exposure_plus_1),
+                    Theme(
+                      data: Theme.of(context).copyWith(
+                        iconButtonTheme: IconButtonThemeData(
+                          style: ButtonStyle(
+                            minimumSize: WidgetStateProperty.all(
+                              Size.square(kMinInteractiveDimension),
+                            ),
+                            padding: WidgetStateProperty.all(EdgeInsets.all(8)),
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            shape: WidgetStateProperty.fromMap({
+                              WidgetState.any: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            }),
+                          ),
+                        ),
+                      ),
+                      child: IconButton.filled(
+                        onPressed: builderContext.read<CounterCubit>().add,
+                        tooltip: 'Increment',
+                        icon: const Icon(Icons.exposure_plus_1),
+                      ),
                     ),
                   ],
                 );

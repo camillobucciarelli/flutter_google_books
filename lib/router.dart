@@ -12,6 +12,7 @@ import 'features/books/presentation/detail/volume_detail_page.dart';
 import 'features/books/presentation/list/volumes_list_page.dart';
 import 'features/books/presentation/volumes_route.dart';
 import 'home_page.dart';
+import 'login_page_reactive.dart';
 
 final appRouter = GoRouter(
   debugLogDiagnostics: true,
@@ -61,7 +62,7 @@ final appRouter = GoRouter(
     GoRoute(
       name: 'login',
       path: '/login',
-      builder: (context, state) => LoginPage(),
+      builder: (context, state) => LoginPageReactive(),
     ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, child) {

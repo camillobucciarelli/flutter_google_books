@@ -39,6 +39,7 @@ dependencies:
   flutter_loggy: ^2.0.3+1
   flutter_loggy_dio: ^3.1.0
   accessibility_tools: ^2.8.0
+  reactive_forms: ^18.2.0
 
 dev_dependencies:
   flutter_test:
