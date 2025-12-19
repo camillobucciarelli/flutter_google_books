@@ -6,18 +6,20 @@ import '../../domain/models/volume_detail.dart';
 import 'state/volume_detail_cubit.dart';
 
 class VolumeDetailPage extends StatelessWidget {
-  const VolumeDetailPage({super.key, required this.id});
-
-  static const routeName = '/volume-detail';
+  const VolumeDetailPage(this.id, this.pageTitle, {super.key, this.extra});
 
   final String id;
+
+  final String pageTitle;
+
+  final Object? extra;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<VolumeDetailCubit>(
       create: (context) => GetIt.I()..init(id),
       child: Scaffold(
-        appBar: AppBar(title: const Text('Book Detail'), centerTitle: true),
+        appBar: AppBar(title: Text(pageTitle), centerTitle: true),
         body: BlocConsumer<VolumeDetailCubit, VolumeDetailState>(
           listenWhen: (previous, current) => current is VolumeDetailError,
           listener: (context, state) {
@@ -33,8 +35,7 @@ class VolumeDetailPage extends StatelessWidget {
               VolumeDetailLoading() => const Center(
                 child: CircularProgressIndicator(),
               ),
-              VolumeDetailLoaded(volumeDetail: final volumeDetail) =>
-                _VolumeDetailWidget(volumeDetail),
+              VolumeDetailLoaded(volumeDetail: final volumeDetail) => Text(extra?.toString() ?? ''),
               _ => const SizedBox.shrink(),
             };
           },

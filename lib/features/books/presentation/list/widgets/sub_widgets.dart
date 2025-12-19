@@ -14,6 +14,7 @@ class _InitialView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Perform a search'));
+    return Center(child: CircularProgressIndicator.adaptive());
+    // return Center(child: Text('Perform a search'));
   }
 }

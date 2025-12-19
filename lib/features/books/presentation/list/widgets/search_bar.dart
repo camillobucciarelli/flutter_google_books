@@ -28,17 +28,22 @@ class _AppSearchBarState extends State<AppSearchBar> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: TextFormField(
-        onChanged: (value) {
-          _debounce?.cancel();
-          _debounce = Timer(const Duration(milliseconds: 500), () {
-            context.read<VolumesListCubit>().searchVolumes(value);
-          });
-        },
-        decoration: const InputDecoration(
-          hintText: 'Search',
-          border: OutlineInputBorder(),
-          suffixIcon: Icon(Icons.search),
+      child: Semantics(
+        label: 'Searchbar',
+        focusable: true,
+        enabled: true,
+        child: TextFormField(
+          onChanged: (value) {
+            _debounce?.cancel();
+            _debounce = Timer(const Duration(milliseconds: 500), () {
+              context.read<VolumesListCubit>().searchVolumes(value);
+            });
+          },
+          decoration: const InputDecoration(
+            hintText: 'Search',
+            border: OutlineInputBorder(),
+            suffixIcon: Icon(Icons.search),
+          ),
         ),
       ),
     );

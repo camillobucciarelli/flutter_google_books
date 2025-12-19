@@ -7,21 +7,28 @@ class _VolumesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PagingListener<int, VolumeListItem>(
-      controller: pagingController,
-      builder: (context, state, fetchNextPage) {
-        return PagedListView.separated(
-          state: state,
-          padding: EdgeInsets.all(8),
-          fetchNextPage: fetchNextPage,
-          builderDelegate: PagedChildBuilderDelegate<VolumeListItem>(
-            itemBuilder: (context, item, index) {
-              return _VolumeListItemWidget(item);
+    return Column(
+      children: [
+        Text(context.appLocalizations.pageCount(pagingController.value.nextIntPageKey -1, 100)),
+        Expanded(
+          child: PagingListener<int, VolumeListItem>(
+            controller: pagingController,
+            builder: (context, state, fetchNextPage) {
+              return PagedListView.separated(
+                state: state,
+                padding: EdgeInsets.all(8),
+                fetchNextPage: fetchNextPage,
+                builderDelegate: PagedChildBuilderDelegate<VolumeListItem>(
+                  itemBuilder: (context, item, index) {
+                    return _VolumeListItemWidget(item);
+                  },
+                ),
+                separatorBuilder: (context, index) => const SizedBox(height: 8),
+              );
             },
           ),
-          separatorBuilder: (context, index) => const SizedBox(height: 8),
-        );
-      },
+        ),
+      ],
     );
   }
 }

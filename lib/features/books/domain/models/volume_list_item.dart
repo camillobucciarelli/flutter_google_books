@@ -8,6 +8,7 @@ class VolumeListItem extends Equatable {
     required this.title,
     this.imageUrl,
     required this.authors,
+    this.publishedDate,
   });
 
   factory VolumeListItem.fromResponse(Volume volume) {
@@ -16,6 +17,7 @@ class VolumeListItem extends Equatable {
       title: volume.volumeInfo.title,
       imageUrl: volume.volumeInfo.imageLinks.thumbnail,
       authors: volume.volumeInfo.authors,
+      publishedDate: volume.volumeInfo.publishedDate,
     );
   }
 
@@ -23,6 +25,8 @@ class VolumeListItem extends Equatable {
   final String title;
   final String? imageUrl;
   final List<String> authors;
+  final DateTime? publishedDate;
+
 
   @override
   List<Object?> get props => [id, title, imageUrl, authors];

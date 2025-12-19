@@ -1,0 +1,42 @@
+{
+  "@pageCount": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "totals": {
+        "type": "int"
+      }
+    }
+  },
+  "@published": {
+    "placeholders": {
+      "date": {
+        "format": "dd MMM yyyy",
+        "isCustomDateFormat": "true",
+        "type": "DateTime"
+      }
+    }
+  },
+  "books": "Libri",
+  "counter": "Contatore",
+  "pageCount": "pagina {current} di {totals}",
+  "published": "pubblicato il {date}",
+  "system": "Sistema",
+  "pages": "{count, plural, =1{pagina} other{pagine}}",
+  "@pages": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "greetings": "{gender, select, male{Signor} female{Signora} pippo{ciaone} other{Ciao}}",
+  "@greetings": {
+    "placeholders": {
+      "gender": {
+        "type": "String"
+      }
+    }
+  }
+}

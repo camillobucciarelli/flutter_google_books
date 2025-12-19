@@ -1,0 +1,42 @@
+{
+  "@pageCount": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "totals": {
+        "type": "int"
+      }
+    }
+  },
+  "@published": {
+    "placeholders": {
+      "date": {
+        "format": "dd MMM yyyy",
+        "isCustomDateFormat": "true",
+        "type": "DateTime"
+      }
+    }
+  },
+  "books": "Books",
+  "counter": "Counter",
+  "pageCount": "page {current} of {totals}",
+  "published": "Published on {date}",
+  "system": "System",
+  "pages": "{count, plural, =1{page} other{pages}}",
+  "@pages": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "greetings": "{gender, select, male{Signor} female{Signora} pippo{ciaone} other{Ciao}}",
+  "@greetings": {
+    "placeholders": {
+      "gender": {
+        "type": "String"
+      }
+    }
+  }
+}
